@@ -1,6 +1,14 @@
 export default {
   async fetch(request, env, ctx) {
-    const cacheKey = new URL('https://keith20.org/logo.png'); // Custom cache key
+    const cacheKey = new URL('https://martinelli.dev/workers-cache/logo.png'); // Custom cache key
+		// Alternative approaches
+		//
+		// add variables
+		// const cacheKey = new URL(`https://my-cdn.cloudflare.com/cached-logo-${new Date().getHours()}`);
+
+		// use Workers URL
+		// const cacheKey = new URL(request.url);
+
     const cache = caches.default;
 
     // Check if the response is already cached
